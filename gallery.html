@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.photo{
+    width:320px;
+    height:420px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 0 25px hotpink;
+    transition:opacity 0.8s ease, transform 0.8s ease;
+    opacity:1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+<h1>📸 Our Beautiful Memories ❤️</h1>
+
+<img id="slide" class="photo" src="images/1.jpg">
+
+<br><br>
+
+<button onclick="window.location.href='final.html'">
+🎁 Final Surprise
+</button>
+
+</div>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+<script>
+
+let images = [
+"images/1.jpg",
+"images/2.jpg",
+"images/3.jpg",
+"images/4.jpg",
+"images/5.jpg",
+"images/6.jpg",
+"images/7.jpg",
+"images/8.jpg",
+"images/9.jpg",
+"images/10.jpg"
+];
+
+let i = 0;
+
+setInterval(() => {
+
+    const img = document.getElementById("slide");
+
+    img.style.opacity = "0";
+    img.style.transform = "scale(0.9)";
+
+    setTimeout(() => {
+
+        i = (i + 1) % images.length;
+
+        img.src = images[i];
+
+        img.style.opacity = "1";
+        img.style.transform = "scale(1)";
+
+    }, 500);
+
+}, 3000);
+
+</script>
+
+</body>
+</html>

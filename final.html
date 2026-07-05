@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Surprise ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.final-text{
+    font-size:50px;
+    color:#ff1493;
+    text-shadow:0 0 10px #ff1493,
+                0 0 20px hotpink,
+                0 0 40px deeppink;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.08);
+}
+
+}
+
+.cake{
+
+font-size:180px;
+animation:cake 2s infinite;
+
+}
+
+@keyframes cake{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+
+}
+
+.message{
+
+font-size:25px;
+color:#444;
+margin-top:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+<img src="cake/cake.png" class="cake-img" alt="Birthday Cake">
+<h1 class="final-text">
+Happy Birthday Rabii ❤️
+</h1>
+
+<p class="message">
+
+May Allah bless you with endless happiness,
+good health,
+success,
+and a beautiful life. 🤲💖
+
+<br><br>
+
+🌹 Forever From Atta 🌹
+
+</p>
+
+</div>
+
+<audio autoplay loop>
+<source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</body>
+</html><script>
+
+function fireworks(){
+
+    confetti({
+        particleCount:250,
+        spread:180,
+        origin:{y:0.6}
+    });
+
+    setTimeout(()=>{
+        confetti({
+            particleCount:180,
+            angle:60,
+            spread:80,
+            origin:{x:0}
+        });
+    },500);
+
+    setTimeout(()=>{
+        confetti({
+            particleCount:180,
+            angle:120,
+            spread:80,
+            origin:{x:1}
+        });
+    },1000);
+
+}
+
+window.onload=function(){
+
+    createHearts();
+
+    fireworks();
+
+    setInterval(fireworks,4000);
+
+};
+
+</script>

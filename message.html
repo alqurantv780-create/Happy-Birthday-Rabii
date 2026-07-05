@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Rabii ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+    <h1>💖 A Special Message 💖</h1>
+
+    <p id="typing" style="font-size:22px; line-height:1.8;"></p>
+
+    <button onclick="window.location.href='gallery.html'">
+Next ➜
+</button>
+
+</div>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+<script>
+
+const text = `Dear Rabii ❤️
+
+Every moment with you is beautiful.
+You are the reason behind so many smiles.
+May Allah always protect you,
+keep you happy,
+and fulfill every dream in your life. 🤲💖
+
+🌹 Happy Birthday Once Again 🌹`;
+
+let i = 0;
+
+const typing = document.getElementById("typing");
+
+function typeWriter() {
+
+    if(i < text.length){
+
+        if(text.charAt(i) === "\n"){
+            typing.innerHTML += "<br>";
+        }else{
+            typing.innerHTML += text.charAt(i);
+        }
+
+        i++;
+
+        setTimeout(typeWriter,50);
+
+    }
+
+}
+
+typeWriter();
+
+</script>
+
+</body>
+</html>
